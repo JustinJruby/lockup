@@ -3,7 +3,7 @@ module Lockup
     skip_before_filter :check_for_lockup
     
     def unlock
-binding.remote_pry
+        puts params.inspect
       if params[:lockup_codeword].present?
         user_agent = request.env['HTTP_USER_AGENT'].downcase
         unless user_agent.match(/crawl|googlebot|slurp|spider|bingbot|tracker|click|parser|spider/)
@@ -33,6 +33,7 @@ binding.remote_pry
     private
     
     def set_cookie
+      puts cookies.inspect
       cookies[:lockup] = { :value => @codeword.to_s.downcase, :expires => (Time.now + 5.years) }
     end
     
