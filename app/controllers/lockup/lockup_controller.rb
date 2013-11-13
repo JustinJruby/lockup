@@ -3,6 +3,7 @@ module Lockup
     skip_before_filter :check_for_lockup
     
     def unlock
+binding.remote_pry
       if params[:lockup_codeword].present?
         user_agent = request.env['HTTP_USER_AGENT'].downcase
         unless user_agent.match(/crawl|googlebot|slurp|spider|bingbot|tracker|click|parser|spider/)
