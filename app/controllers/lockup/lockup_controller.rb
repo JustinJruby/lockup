@@ -41,7 +41,7 @@ module Lockup
       if @return_to.present?
         redirect_to "#{@return_to}"
       else
-        redirect_to '/'
+        redirect_to root_path
       end
     end
 
