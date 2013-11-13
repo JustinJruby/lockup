@@ -9,9 +9,11 @@ module Lockup
           if cookies[:lockup] == ENV["LOCKUP_CODEWORD"].to_s.downcase
             return
           else
+            puts 'log 1'
             redirect_to lockup.unlock_path(:return_to => request.fullpath.split('?lockup_codeword')[0], :lockup_codeword => params[:lockup_codeword])
           end
         else
+          puts 'log2'
           redirect_to lockup.unlock_path(:return_to => request.fullpath.split('?lockup_codeword')[0], :lockup_codeword => params[:lockup_codeword])
         end
       end
