@@ -7,8 +7,10 @@ module Lockup
       if ENV["LOCKUP_CODEWORD"].present?
         if cookies[:lockup].present?
           if cookies[:lockup] == ENV["LOCKUP_CODEWORD"].to_s.downcase
+            puts 'have cookie'
             return
           else
+            puts ' redirect to install cookie'
             redirect_to lockup.unlock_path(:return_to => request.fullpath.split('?lockup_codeword')[0], :lockup_codeword => params[:lockup_codeword])
           end
         else
