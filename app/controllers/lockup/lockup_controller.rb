@@ -47,7 +47,7 @@ module Lockup
         redirect_to "#{@return_to}"
       else
         puts 'redirect to /'
-        redirect_to ::root_path
+        redirect_to root_path
       end
     end
 
