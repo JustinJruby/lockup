@@ -38,7 +38,7 @@ module Lockup
     
     def set_cookie
       cookies[:lockup] = { :value => @codeword.to_s.downcase, :expires => (Time.now + 5.years) }
-            puts 'set cookie to  ' + cookies[:lockup].value 
+            puts 'set cookie to  ' + cookies[:lockup][:value]
     end
     
     def run_redirect
@@ -46,7 +46,7 @@ module Lockup
         puts 'redirect to return to'
         redirect_to "#{@return_to}"
       else
-        puts 'redirect to /'
+        puts 'redirect to /'+ "#{root_path}"
         redirect_to root_path
       end
     end
