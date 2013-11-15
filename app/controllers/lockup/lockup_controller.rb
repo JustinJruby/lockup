@@ -43,7 +43,7 @@ module Lockup
     
     def run_redirect
       if @return_to.present?
-        puts 'redirect to return to'
+        puts 'redirect to return to ' + #{@return_to} #{@return_to}.blank?" 
         redirect_to "#{@return_to}"
       else
         puts 'redirect to /'+ "#{root_path}"
