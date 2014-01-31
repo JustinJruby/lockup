@@ -56,7 +56,7 @@ If you're using [Figaro](https://github.com/laserlemon/figaro), set your lockup 
 
 3. In your controller which would you would like to restrict
 
-     before_action :check_for_lockup, only: [:edit, :update, :new, :destroy, :create]
+        before_action :check_for_lockup, only: [:edit, :update, :new, :destroy, :create]
 
 ### Link it with no typing:
 
